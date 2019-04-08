@@ -1,0 +1,32 @@
+﻿<div>
+    <div class="activities">Fulliness: <span id="fulliness">@ViewBag.fullness</span></div>
+    <div class="activities">Happiness: <span id="fulliness">@ViewBag.happiness</span></div>
+    <div class="activities">Meals: <span id="fulliness">@ViewBag.meal</span></div>
+    <div class="activities">Energy: <span id="fulliness">@ViewBag.energy</span></div>
+
+    <div class="play-board">
+        <img src="http://yourdost-blog-images.s3-ap-southeast-1.amazonaws.com/wp-content/uploads/2016/01/03165939/Dogs.jpg" alt="pet">
+        <div class="message">@ViewBag.message</div>
+    </div>
+
+    <div class="buttonsList">
+        
+        <br>
+        @{
+            if(ViewBag.gameEnd == true)
+            {
+                <form method="post">
+                    <button formaction="Restart" class="btn btn-primary">Feed</button>
+                </form>
+            } else {
+                <form method="post">
+                    <button formaction="FeedPet" class="btn btn-primary">Feed</button>
+                    <button formaction="PlayPet" class="btn btn-primary">Play</button>
+                    <button formaction="WorkPet" class="btn btn-primary">Work</button>
+                    <button formaction="SleepPet" class="btn btn-primary">Sleep</button>
+                </form>
+            }
+        }
+        
+    </div>
+</div>
